@@ -8,11 +8,16 @@ public class Baekjoon1912 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
+
         int[] dp = new int[n + 1];
-
-        for (int i = 0; i < n; i++) {
-//            dp[i]
+        dp[0]=0;
+        dp[1] = Integer.parseInt(st.nextToken());
+        int result = dp[1];
+        for (int i = 2; i <= n; i++) {
+            int a = Integer.parseInt(st.nextToken());
+            dp[i] = Math.max(dp[i-1]+a, a);
+            result = Math.max(result, dp[i]);
         }
-
+        System.out.println(result);
     }
 }
