@@ -11,35 +11,35 @@ public class Baekjoon2805 {
         int M = Integer.parseInt(st.nextToken()); // 필요한 나무의 길이
         int[] dp = new int[N];
 
-        // 나무 높이 입력받기 및 최대 높이 구하기
-        int maxH = 0;
+        int maxH = 0;  // 최대 높이
+        int minH = 0;  // 최소 높이
+
+        // 나무의 높이 입력 및 최대 높이 계산
         StringTokenizer st1 = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             dp[i] = Integer.parseInt(st1.nextToken());
             maxH = Math.max(maxH, dp[i]);
         }
 
-        // 이진 탐색
-        int minH = 0;  // 최소 높이는 0부터 시작
-        int result = 0; // 최적의 절단 높이 저장
+        int result = 0;  // 최적의 절단 높이 저장
 
-        while (minH <= maxH) {
-            int height = (minH + maxH) / 2;  // 중간값
-            long sum = 0;  // 이번 높이에서 잘린 나무 길이 합
+        // 이진 탐색 수행
+        while (minH <= maxH) { // 최대 높이값을 구해야 하기 때문에 계속해서 while문이 실행되어야 한다.
+            int height = (maxH + minH) / 2;  // 중간값 계산
+            long sum = 0;  // 잘린 나무의 총 길이
 
-            // 잘린 나무 길이 계산
+            // 현재 높이에서 잘린 나무 길이 계산
             for (int i = 0; i < N; i++) {
                 if (dp[i] > height) {
                     sum += dp[i] - height;
                 }
             }
 
-            // 조건에 따라 이진 탐색 범위 조정
-            if (sum >= M) {  // 필요한 나무 길이를 만족할 때
-                result = height;  // 일단 현재 높이를 저장
-                minH = height + 1;  // 더 높은 절단 높이를 탐색
-            } else {  // 필요한 나무 길이를 만족하지 못할 때
-                maxH = height - 1;  // 절단 높이를 낮춤
+            if (sum >= M) {  // 필요한 나무를 충족하는 경우
+                result = height;  // 결과값 갱신
+                minH = height + 1;  // 더 높은 절단 높이 탐색
+            } else {
+                maxH = height - 1;  // 절단 높이 낮추기
             }
         }
 
