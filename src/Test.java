@@ -8,11 +8,7 @@ import java.util.StringTokenizer;
 
 public class Test {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-//        for (int i = 0; i < 5; i++) {
-//            System.out.println(st.nextToken());
-//        }
-        System.out.println(st.countTokens());
+        Integer a = 0;
+        System.out.println(a);
     }
 }
