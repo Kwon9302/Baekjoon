@@ -53,12 +53,11 @@ public class ProgrammersCollectionWarning {
                                 // System.out.println(route[j]);
                             }
 
-// 요약하자면 그냥 좌표값이랑 시간을 Map에 다 넣어버린다. 그리고 getOrDefault를 사용해서 count한다.
-//                     그리고 count값이 1이 넘으면 충돌이 되는거임
+                        // 요약하자면 그냥 좌표값이랑 시간을 Map에 다 넣어버린다. 그리고 getOrDefault를 사용해서 count한다.
+                        //                     그리고 count값이 1이 넘으면 충돌이 되는거임
                         }
                     }
                 }
-
                 return collisionCount;
             }
         }
