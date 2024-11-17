@@ -28,7 +28,7 @@ public class Baekjoon1406 {
                 }
             } else if(ch.equals("P")){
                 String xx = x.nextToken();
-                cursorIndex.add(xx); // add는 커서 왼쪽에 글자를 추가함
+                cursorIndex.add(xx); // add는 커서 왼쪽에 글자를 추가함}
             } else if(ch.equals("B")){
                 if(cursorIndex.hasPrevious()){
                     cursorIndex.previous();
