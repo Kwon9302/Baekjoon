@@ -1,53 +1,43 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 import java.util.Stack;
 
 public class Baekjoon1874 {
     public static void main(String[] args) throws IOException {
-        // 1874
-        Scanner in = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
         StringBuilder sb = new StringBuilder();
         Stack<Integer> stack = new Stack<>();
-        int N = in.nextInt();
-//        8
 
-//        4
-//        3
-//        6
-//        8
-//        7
-//        5
-//        2
-//        1
-        int start = 0;
+        int current = 1; // 1부터 N까지 스택에 넣을 숫자
+        boolean possible = true; // 수열 생성 가능 여부
 
-        // N 번 반복
-        while(N -- > 0) {
+        for (int i = 0; i < N; i++) {
+            int target = Integer.parseInt(br.readLine());
 
-            int value = in.nextInt();
-
-            if(value > start) {
-                // start + 1부터 입력받은 value 까지 push를 한다.
-                for(int i = start + 1; i <= value; i++) {
-                    stack.push(i);
-                    sb.append('+').append('\n');	// + 를 저장한다.
-                }
-                start = value; 	// 다음 push 할 때의 오름차순을 유지하기 위한 변수 초기화
+            // 스택에 target까지 숫자를 push
+            while (current <= target) {
+                stack.push(current++);
+                sb.append("+\n");
             }
 
-            // top에 있는 원소가 입력받은 값과 같이 않은 경우
-            else if(stack.peek() != value) {
-                System.out.println("NO");
-                return;		// 또는 System.exit(0); 으로 대체해도 됨.
+            // 스택의 최상단이 target과 같다면 pop
+            if (!stack.isEmpty() && stack.peek() == target) {
+                stack.pop();
+                sb.append("-\n");
+            } else {
+                // 스택의 최상단이 target과 다르면 불가능
+                possible = false;
+                break;
             }
-
-            stack.pop();
-            sb.append('-').append('\n');
-
         }
 
-        System.out.println(sb);
+        // 결과 출력
+        if (possible) {
+            System.out.println(sb.toString());
+        } else {
+            System.out.println("NO");
+        }
     }
 }

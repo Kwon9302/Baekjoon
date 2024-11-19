@@ -139,10 +139,5 @@ public class Test {
         }
 
         return values.toArray(new String[0]);
-
-//    @DeleteMapping("/exit")
-//    public ResponseEntity exitChatRoom(@AuthenticationPrincipal UserDetails userdetails) {
-//        chatRoomService.exitChatRoom(userdetails.getUsername());
-//    }
     }
 }
