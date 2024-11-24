@@ -1,24 +1,25 @@
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.math.BigInteger;
 
-public class Empoty {
-    public static void main(String[] args) {
-//        @GetMapping("/api/v1/chat/rooms/{chatroomId}/enter")
-//        public ResponseResult<Map<String, Object>> enterChatRoom(
-//                @PathVariable Long chatroomId,
-//        @RequestParam(defaultValue = "0") int page,
-//        @RequestParam(defaultValue = "50") int size,
-//        @AuthenticationPrincipal UserDetails userDetails) {
-//
-//            log.info("채팅방 입장 요청 - chatroomId: {}, page: {}, size: {}", chatroomId, page, size);
-//            Pageable pageable = PageRequest.of(page, size);
-//            List<MessageDTO> messages = chatService.getChatHistory(chatroomId, userDetails.getUsername(), pageable);
-//
-//            Map<String, Object> response = new HashMap<>();
-//            response.put("messages", messages);
-//
-//            return ResponseResult.success(response);
-//        }
+public class Empoty{
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = br.readLine().split(" ");
+
+        // 입력값을 BigInteger로 변환
+        BigInteger n = new BigInteger(input[0]);
+        BigInteger m = new BigInteger(input[1]);
+
+        // 몫 계산
+        BigInteger quotient = n.divide(m);
+        // 나머지 계산
+        BigInteger remainder = n.remainder(m);
+
+        // 결과 출력
+        System.out.println(quotient);
+        System.out.println(remainder);
     }
 }
+
