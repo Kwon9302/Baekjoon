@@ -6,8 +6,8 @@ public class Test {
 
     public static void main(String[] args) {
         // 입력 파일과 출력 파일 경로를 지정합니다.
-        String inputFilePath = "/Users/ohhyunkwon/Downloads/CHATROOM (4).sql";
-        String outputFilePath = "/Users/ohhyunkwon/Downloads/CHATROOM (44).sql";
+        String inputFilePath = "/Users/ohhyunkwon/Downloads/MESSAGE (4).sql";
+        String outputFilePath = "/Users/ohhyunkwon/Downloads/MESSAGECONVERT (44).sql";
 
         // PK 값을 제거하지 않을 테이블 리스트를 대문자로 저장합니다.
         Set<String> tablesToSkip = new HashSet<>(Arrays.asList(
