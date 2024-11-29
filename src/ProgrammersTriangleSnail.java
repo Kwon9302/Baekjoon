@@ -1,5 +1,5 @@
-public class ProgrammersTriangleSnail {
     import java.util.*;
+public class ProgrammersTriangleSnail {
     class Solution {
         public int[] solution(int n) {
 
