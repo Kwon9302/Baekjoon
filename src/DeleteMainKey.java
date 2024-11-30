@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.util.regex.*;
 
-public class Test {
+public class DeleteMainKey {
 
     public static void main(String[] args) {
         // 입력 파일과 출력 파일 경로를 지정합니다.
