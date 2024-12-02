@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Baekjoon2447 {
+    static StringBuilder sb = new StringBuilder();
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt(); // 패턴의 전체 크기
@@ -18,6 +19,7 @@ public class Baekjoon2447 {
 
         // 패턴 출력
         printPattern(pattern);
+        System.out.println(sb.toString());
     }
 
     // 재귀적으로 패턴을 생성하는 메서드
@@ -51,9 +53,9 @@ public class Baekjoon2447 {
     public static void printPattern(char[][] pattern) {
         for (char[] row : pattern) {
             for (char ch : row) {
-                System.out.print(ch);
+                sb.append(ch);
             }
-            System.out.println();
+            sb.append("\n");
         }
     }
 }
