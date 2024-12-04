@@ -9,7 +9,7 @@ public class Baekjoon11650 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        ArrayList<int[]> arr = new ArrayList<int[]>();
+        ArrayList<int[]> arr = new ArrayList<>();
         for (int i = 0; i < N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int x=  Integer.parseInt(st.nextToken());
@@ -17,6 +17,7 @@ public class Baekjoon11650 {
 
             arr.add(new int[]{x, y});
         }
+
         // x를 기준으로 정렬하고, x가 같으면 y를 기준으로 정렬
         Collections.sort(arr, (o1, o2) -> {
             if (o1[0] == o2[0]) {
@@ -25,6 +26,7 @@ public class Baekjoon11650 {
                 return o1[0] - o2[0]; // x 기준으로 정렬
             }
         });
+
         for (int i = 0; i < N; i++) {
             System.out.print(arr.get(i)[0] + " " + arr.get(i)[1]);
             System.out.println();
