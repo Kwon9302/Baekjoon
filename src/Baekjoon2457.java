@@ -17,7 +17,7 @@ public class Baekjoon2457 {
             int startDay = Integer.parseInt(st.nextToken());
 
             int endMonth = Integer.parseInt(st.nextToken());
-            int endDay = Integer.parseInt(st.nextToken());
+            int endDay = Integer.parseInt(st.nextToken())-1;
 
             arr.add(new int[]{startMonth * 100 + startDay, endMonth * 100 + endDay});
         }
