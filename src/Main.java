@@ -7,26 +7,24 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main {
+    static int[] arr = {1, 2, 3, 4};
+    static StringBuilder sb = new StringBuilder();
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
 
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        PriorityQueue<Integer> queue = new PriorityQueue<>();
-        for (int i = 0; i < N; i++) {
-            queue.add(Integer.parseInt(st.nextToken()));
+    printArray(0,0);
+        System.out.println(sb.toString());
+
+    }
+
+    public static void printArray(int sum, int index) {
+        if(index == arr.length-1) {
+            sum+=arr[index];
+            sb.append(sum).append(" ");
+            return;
         }
 
-        Queue<Integer> answer = new LinkedList<>();
-        int sum=0;
-        while (!queue.isEmpty()) {
-            sum+=queue.poll();
-            answer.add(sum);
-        }
-        int res = 0;
-        while (!answer.isEmpty()) {
-            res += answer.poll();
-        }
-        System.out.println(res);
+        sum+=arr[index];
+        printArray(sum, index+1);
+
     }
 }
